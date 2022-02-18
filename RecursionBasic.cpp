@@ -1,6 +1,7 @@
 // Online C++ compiler to run C++ program online
 #include <iostream>
 using namespace std;
+#include<bits/stdc++.h>
 int  count (int n)
 {
     cout<<"count "<<n<<endl;
@@ -72,7 +73,23 @@ int CountZero(int n)
     return ans;
     
 }
-
+double gSum(int n)
+{
+    if ( n == 0)
+      return 1;
+/*    double sum = 0;
+    int i = 0;
+    while(i <n)
+    {
+        sum = sum + 1.0/(pow(2,i));
+        i++;
+    }
+  */
+  double  sum = gSum(n -1);
+  
+  return sum+1.0/(pow(2,n));
+    
+}
 int main() {
     // Write C++ code here
     
@@ -81,5 +98,6 @@ int main() {
     cout<<"Sum of the digits =  "<<Sumof_the_digit(1234)<<endl;
     cout<<" Multiple of 2 number "<<multiple( 4,5)<<endl;
     cout<<"COunt Zero's= "<<CountZero(100)<<endl;
+     std::cout << "Gsum"<<gSum(5)<<endl;
     return 0;
 }
